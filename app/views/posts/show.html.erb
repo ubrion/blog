@@ -1,0 +1,9 @@
+<article>
+  <header>
+    <h1><%= @post.title %></h1>
+    <time datetime="<%= @post.date %>"><%= @post.date.strftime("%d-%m-%Y") %></time>
+    <%= link_to "Editar", edit_post_path(@post) %>
+  </header>
+
+  <%= @post.body %>
+</article>
