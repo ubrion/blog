@@ -2,7 +2,9 @@
   <header>
     <h1><%= @post.title %></h1>
     <time datetime="<%= @post.date %>"><%= @post.date.strftime("%d-%m-%Y") %></time>
-    <%= link_to "Editar", edit_post_path(@post) %>
+    <% if current_user %>
+      <%= link_to "Editar", edit_post_path(@post) %>
+    <% end %>
   </header>
 
   <%= @post.body %>
