@@ -4,6 +4,9 @@
       <li>
         <small><%= post.date.strftime("%d-%m-%y") %></small>
         <%= link_to post.title, post_path(post) %>
+        <% if post.draft? %>
+        <small>draft</small>
+        <% end %>
       </li>
     <% end %>
   </ul>

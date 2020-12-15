@@ -10,23 +10,25 @@
   </head>
 
   <body>
-    <% if current_user %>
-      <nav>
-        <ul>
-          <li><%= link_to "Add new post", new_post_path %></li>
-          <li><%= link_to "Desconectar", sessions_path, method: :delete%></li>
-        </ul>
-      </nav>
-    <% end %>
+    <div class="container">
+      <% if current_user %>
+        <nav>
+          <ul>
+            <li><%= link_to "Add new post", new_post_path %></li>
+            <li><%= link_to "Desconectar", sessions_path, method: :delete%></li>
+          </ul>
+        </nav>
+      <% end %>
 
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: "alert alert__#{name}" %>
-    <% end %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert__#{name}" %>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
 
-    <footer class="footer">
-      <%= link_to "ubrion.com", root_path %>
-    </footer>
+      <footer class="footer">
+        <%= link_to "ubrion.com", root_path %>
+      </footer>
+    </div>
   </body>
 </html>

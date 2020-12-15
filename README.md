@@ -1,6 +1,8 @@
 # TO-DO
 
-- [ ] add drafts
+- [ ] add github source link
+- [ ] add categories
+- [ ] better post permalinks
 - [ ] add rss/atom feed
 - [ ] add pages
 - [ ] add comments
@@ -11,3 +13,4 @@
 # CHANGELOG
 
 - 15/12/20 order posts desc
+- 15/12/20 post drafts

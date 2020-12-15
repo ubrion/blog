@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.footer {
-  margin-top: 5rem;
-}

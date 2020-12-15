@@ -29,5 +29,10 @@
     <%= form.datetime_select :date %>
   </div>
 
+  <div class="form__control form__control--checkbox">
+    <%= form.label :draft %>
+    <%= form.check_box :draft %>
+  </div>
+
   <%= form.submit %>
 <% end %>
