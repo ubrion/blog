@@ -1,7 +1,10 @@
 <% if @posts.any? %>
   <ul>
     <% @posts.each do |post| %>
-      <li><%= link_to post.title, post_path(post) %></li>
+      <li>
+        <small><%= post.date.strftime("%d-%m-%y") %></small>
+        <%= link_to post.title, post_path(post) %>
+      </li>
     <% end %>
   </ul>
 <% else %>
