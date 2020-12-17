@@ -42,10 +42,6 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(slug: params[:slug])
 
-    puts "-" * 100
-    puts post_params.inspect
-    puts "-" * 100
-
     if @post.update(post_params)
       redirect_to posts_path, notice: "Post actualizado correctamente."
     else
