@@ -1,0 +1,13 @@
+<h1>Etiquetas</h1>
+
+<p><%= link_to "Añadir etiqueta", new_tag_path %></p>
+
+<% if @tags.any? %>
+  <ul>
+    <% @tags.each do |tag| %>
+      <li><%= link_to tag.name, edit_tag_path(tag) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Todavía no hay etiquetas.</p>
+<% end %>

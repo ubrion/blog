@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :posts, param: :slug
   resource :sessions, only: [:new, :create, :destroy]
+  resources :tags
 end
