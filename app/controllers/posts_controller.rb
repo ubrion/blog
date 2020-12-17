@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(slug: params[:slug])
+    @post = Post.includes(:tags).find_by(slug: params[:slug])
 
     if @post.draft? && !current_user
       redirect_to root_path
@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @tags = Tag.all
   end
 
   def create
@@ -35,10 +36,15 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by(slug: params[:slug])
+    @tags = Tag.all
   end
 
   def update
     @post = Post.find_by(slug: params[:slug])
+
+    puts "-" * 100
+    puts post_params.inspect
+    puts "-" * 100
 
     if @post.update(post_params)
       redirect_to posts_path, notice: "Post actualizado correctamente."
@@ -53,6 +59,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body, :date, :draft, :slug, :title)
+    params.require(:post).permit(:body, :date, :draft, :slug, :title, tag_ids: [])
   end
 end

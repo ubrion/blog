@@ -2,6 +2,8 @@
   <header>
     <h1><%= @post.title %></h1>
     <time datetime="<%= @post.date %>"><%= @post.date.strftime("%d-%m-%Y") %></time>
+    #
+    <%= render partial: "tags/list", locals: { tags: @post.tags } %>
     <% if current_user %>
       <%= link_to "Editar", edit_post_path(@post) %>
     <% end %>
