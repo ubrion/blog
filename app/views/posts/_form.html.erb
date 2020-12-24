@@ -36,7 +36,7 @@
 
   <div class="form__control form__control--checkbox">
     <%= form.label :tags %><br />
-    <%= form.collection_check_boxes :tag_ids, @tags, :id, :name %>
+    <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
   </div>
 
   <%= form.submit %>
