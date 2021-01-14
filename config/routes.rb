@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  root "posts#index"
+  root 'posts#index'
 
   resources :posts, param: :slug
-  resource :sessions, only: [:new, :create, :destroy]
+  resource :sessions, only: %i[new create destroy]
   resources :tags
+
+  namespace :api do
+    resource :auth, only: [:create]
+    resources :places
+  end
 end
