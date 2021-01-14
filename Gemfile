@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 6'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'geokit-rails'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
