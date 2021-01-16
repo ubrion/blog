@@ -1,6 +1,6 @@
 json.array! @checkins do |checkin|
   json.id checkin.id
-  json.datetime checkin.datetime.in_time_zone(@checkin.time_zone)
+  json.datetime checkin.datetime.in_time_zone(checkin.time_zone)
   json.notes checkin.notes
   json.latitude checkin.latitude
   json.longitude checkin.longitude
