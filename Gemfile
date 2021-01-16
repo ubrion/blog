@@ -10,10 +10,12 @@ gem 'rails', '~> 6.1.0'
 gem 'sass-rails', '>= 6'
 
 gem 'geokit-rails'
+gem 'jbuilder', '~> 2.10'
 gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-rails'
 end
 
 group :development do

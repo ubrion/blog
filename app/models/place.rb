@@ -3,5 +3,7 @@ class Place < ApplicationRecord
                    lat_column_name: :latitude,
                    lng_column_name: :longitude
 
+  has_many :checkins
+
   validates :name, presence: true
 end

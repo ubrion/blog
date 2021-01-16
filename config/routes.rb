@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     resource :auth, only: [:create]
-    resources :places
+    resources :places do
+      resources :checkins, shallow: true
+    end
+    resources :checkins, only: [:index]
   end
 end
