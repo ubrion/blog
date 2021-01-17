@@ -13,7 +13,7 @@ class Api::CheckinsController < ApiController
 
   def create
     checkin_data = checkin_params
-    checkin_data[:datetime] = Time.parse(checkin_params[:datetime]).utc.iso8601
+    checkin_data[:datetime] = ActiveSupport::TimeZone[checkin_params[:time_zone]].parse(checkin_params[:datetime])
 
     @place = Place.find(params[:place_id])
     @checkin = @place.checkins.new(checkin_data)
